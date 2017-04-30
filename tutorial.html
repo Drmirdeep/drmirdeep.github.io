@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>miRDeep2  Tutorial</title>
+	</head>
+	<body>
+	This is a step by step guide for a full small RNA sequencing data
+	analysis using the miRDeep2 package and its patched files. If you haven't installed them yet you can obtain the main package from 
+	https://github.com/rajewsky-lab/mirdeep2
+	and the patched files from 
+	https://github.com/Drmirdeep/mirdeep2_patch		
+	by clicking on Clone or download and then on Download Zip.
+	
+	Extract the zipped files and then open a command line window.
+
+	If you have git installed you can obtain the packages also directly from the
+	command line by typing 
+	git clone https://github.com/rajewsky-lab/mirdeep2.git
+	and
+	git clone https://github.com/Drmirdeep/mirdeep2_patch.git
+	
+To install the miRDeep2 package enter the directory to which the package was extracted to. If you extracted the folder on the Desktop then typing
+cd ~/Desktop/mirdeep2/ 
+will bring you to the mirdeep2 folder.
+Then typing 
+perl install.pl 
+will start the installer and download and install third party software. In particular. bowtie version 1, RNAfold, randfold and the perl packages PDF:API and TTF will be installed. Please follow the instructions on the screen. 
+
+When mirdeep2 was installed successful then you can enter the directory of the mirdeep2_patch and 
+type
+bash patchme.sh
+This will add the patched files to your mirdeep2 installation. 
+After that we can start with the tutorial.
+
+
+	Download miRBase reference files
+	mirbase.pl 21
+
+	</body>
+</html>
