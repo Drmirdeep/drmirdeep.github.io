@@ -27,7 +27,9 @@ h2 {
 	<body>
 		<div class="main">
 		<h1>miRDeep2 tutorial</h1>
-		Extended miRDeep2 tutorial with step by step instructions.	
+		Extended miRDeep2 tutorial with step by step instructions. It will cover the mapper.pl
+		for preprocessing and mapping, the miRDeep2.pl for de-novo prediction and the
+		quantifier.pl for expression profiling. 
 		<h2>Disclaimer</h2>
 		This tutorial comes with no warranty and demands common sense of the reader. I am not
 		responsible for any damage that happens to your computer by using this tutorial.
@@ -82,6 +84,24 @@ h2 {
 		<div class="command">mirbase.pl 21 1</div>
 		The second argument can be anything but 0 which will tell the script to also get the gff
 		files from mirbase.  
+		For miRNA quantification we next extract the miRNAs for our species of interest. For 
+		that you need to know the 3-letter code of miRBase for your species. For humans
+		this will be 'hsa' and mouse would be mmu. 
+		To extract the mature sequences from the mirbase file we downloaded before 
+		you just need to type
+		<div class="command">extract_miRNAs.pl ~/mirbase/21/mature.fa.gz hsa >
+			mature_ref.fa</div> 
+		and to get the hairpin sequences by typing 
+		 <div class="command">extract_miRNAs.pl ~/mirbase/21/hairpin.fa.gz hsa >
+			 hairpin_ref.fa</div>
+	
+		For running miRDeep2 for de-novo miRNA prediction it is beneficial to supply
+		also mature miRNAs from related species. You could for example use mouse 'mmu' and
+		chimp 'ptr' as related species. For extracting those miRNAs you can type
+		<div class="command">extract_miRNAs.pl ~/mirbase/21/mature.fa.gz mmu,ptr >
+			            mature_other.fa</div>
+
+
 
 		<h2>The data and what else you will need</h2>
 		Usually you will have gotten a small RNA sequencing data file from a collaborator that
