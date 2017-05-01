@@ -33,6 +33,10 @@ h2 {
 		<h2>Disclaimer</h2>
 		This tutorial comes with no warranty and demands common sense of the reader. I am not
 		responsible for any damage that happens to your computer by using this tutorial.
+		For comments or questions just create an 'issue' here
+		<a
+			href="https://github.com/Drmirdeep/drmirdeep.github.io/issues">https://github.com/Drmirdeep/drmirdeep.github.io/issues</a>.
+		Apparently you will need a github account for that.
 		<h2>Preface</h2>
 		This is a step by step guide for a full small RNA sequencing data analysis using the
 		miRDeep2 package and its patched files. The first part will describe the general workflow
@@ -113,7 +117,7 @@ h2 {
 		<br><br>
 		Once you know the adapter sequence you should do a simple check to see how many 
 		of your sequences contain the adapter. This you can do by typing
-		<div class="command">grep -c TGGAATTC example_small_rna_file.fa</div>
+		<div class="command">grep -c TGGAATTC example_small_rna_file.fasta</div>
 		where 'TGGAATTC' are the first 8 nucleotides of the adapter that has been used
 		for this sample. Replace it with your own sequencing adapter. MicroRNAs have a mean length
 		of 22 nucleotides in animals so if you have sequenced one of those it will likely have the 
@@ -148,7 +152,7 @@ h2 {
 		sequences to reduce the file size which will save computing time. 
 
 		<div class="command">mapper.pl example_small_rna_file.fastq -e -h -i -j -k TGGAATTC -l 18
-			-m -p refdb.fa -s reads_collapsed.fa -t reads_vs_refdb.fa -v -o 4</div>
+			-m -p refdb.fa -s reads_collapsed.fa -t reads_vs_refdb.arf -v -o 4</div>
 
 		What does this command do? The first argument needs to be your sequencing file.
 		Typically, this will be a fastq file. The format of the fastq file is designated by
@@ -178,7 +182,7 @@ h2 {
 		miRDeep2 considers predicted miRNAs with conserved seeds in other species
 		more reliable that miRNAs with non-conserved seeds. 
 		<div class="command">miRDeep2.pl reads_collapsed.fa refdb.fa reads_vs_refdb.arf
-			mautre_ref_miRNAs.fa mature_other_miRNAs.fa hairpin_ref_miRNAs -t cel
+			mautre_ref.fa mature_other.fa hairpin_ref.fa -t hsa
 			2>report.log</div> 		
 
 
