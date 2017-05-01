@@ -108,19 +108,11 @@ h2 {
 
 		<h2>Tutorial files</h2>
 		In case you want to follow the tutorial with example data you can get
-		the files from here<br> 
-		<a
-	   href="https://github.com/Drmirdeep/drmirdeep.github.io/blob/master/example_small_rna_file.fastq">example_small_rna_file.fastq</a><br>
-   <a
-	href="https://github.com/Drmirdeep/drmirdeep.github.io/blob/master/hairpin_ref.fa">hairpin_ref.fa</a><br>
-   <a
-	href="https://github.com/Drmirdeep/drmirdeep.github.io/blob/master/mature_ref.fa">mature_ref.fa</a><br>
-   <a
-	href="https://github.com/Drmirdeep/drmirdeep.github.io/blob/master/mature_other.fa">mature_other.fa</a><br>
-   <a
-	href="https://github.com/Drmirdeep/drmirdeep.github.io/blob/master/refdb.fa">refdb.fa</a><br>
-
-
+		the files from here 
+		<a href="https://github.com/Drmirdeep/drmirdeep.github.io/archive/master.zip">tutorial_files</a> and type
+		<div class="command">unzip drmirdeep.github.io-master.zip</div>
+		change to the unzipped directory with 
+		<div class="command">cd drmirdeep.github.io-master</div> and continue with the tutorial.
 		<h2>The data and what else you will need</h2>
 		Usually you will have gotten a small RNA sequencing data file from a collaborator that
 		wants you to analyze the data file. Before you can start with any kind of analysis you
@@ -131,14 +123,16 @@ h2 {
 		<br><br>
 		Once you know the adapter sequence you should do a simple check to see how many 
 		of your sequences contain the adapter. This you can do by typing
-		<div class="command">grep -c TGGAATTC example_small_rna_file.fasta</div>
+		<div class="command">grep -c TGGAATTC example_small_rna_file.fastq</div>
 		where 'TGGAATTC' are the first 8 nucleotides of the adapter that has been used
 		for this sample. Replace it with your own sequencing adapter. MicroRNAs have a mean length
 		of 22 nucleotides in animals so if you have sequenced one of those it will likely have the 
 		sequencing adapter attached to it. If the resulting number of sequences with an adapter
 		is around 70% of the number of your input sequences the data set can be considered as
-		reasonably good.  If it is only 10% then likely something went wrong during the
-		sequnecing library preparation or or your sample doesn't so many contain small RNAs. 
+		reasonably good. Note: In case that only adapters have been sequenced predominantly you will
+		also get a high number which is obviously not good. If you only get 10% of sequences with
+		an adpater then likely something went wrong during the
+		sequnecing library preparation or your sample doesn't contain too many small RNAs. 
 
 		For novel miRNA prediction we need to map the reads against a reference database
 		which has to be indexed by bowtie 1. For this we take a reference database file,
