@@ -2,11 +2,12 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
+		<meta name="author" content="Sebastian Mackowiak">
 		<title>miRDeep2 tutorial</title>
 <style>
 
-h1 {
-	    color: #6495ed;
+h2 {
+	color: #6495ed;
 }
 .command {
 	color: green;
@@ -17,21 +18,25 @@ h1 {
 
 .main {
 	margin-left: 100px;
-	width: 550px}
+	width: 550px;
+	font-size: 14pt;
+}
 
 </style>
 	</head>
 	<body>
 		<div class="main">
-		<h1>Disclaimer</h1>
+		<h1>miRDeep2 tutorial<h1>
+		Extended the miRDeep2 tutorial. 	
+		<h2>Disclaimer</h2>
 		This tutorial comes with no warranty and demands common sense of the reader. I am not
 		responsible for any damage that happens to your computer by using this tutorial.
-		<h1>Preface</h1>
+		<h2>Preface</h2>
 		This is a step by step guide for a full small RNA sequencing data analysis using the
 		miRDeep2 package and its patched files. The first part will describe the general workflow
 		to do de-novo miRNA predictions based on a small RNAseq data seq and the second part will
 		focus on expression analysis with the quantification module. 
-		<h1> Installation instructions</h1>
+		<h2> Installation instructions</h2>
 		If you haven't installed them yet you can obtain the main package from 
 		<a href="https://github.com/rajewsky-lab/mirdeep2">miRDeep2</a>
 		and the patched files from 
@@ -78,7 +83,7 @@ h1 {
 		The second argument can be anything but 0 which will tell the script to also get the gff
 		files from mirbase.  
 
-		<h1>The data and what else you will need</h1>
+		<h2>The data and what else you will need</h2>
 		Usually you will have gotten a small RNA sequencing data file from a collaborator that
 		wants you to analyze the data file. Before you can start with any kind of analysis you
 		should either already know the small RNA sequencing adapter that was used for the
@@ -111,7 +116,7 @@ h1 {
 		the fasta file with which the index was build. Otherwise the results in the miRDeep2
 		prediction will be not reliable.  
 
-		<h1>Data preprocessing for novel miRNA prediction</h1>
+		<h2>Data preprocessing for novel miRNA prediction</h2>
 		Since the miRDeep2 package was designed as a complete solution for miRNA prediction and
 		quantification it also contains data preprocessing routines that will also clip the
 		sequencing adapter. The main function of the mapping module is the mapping
@@ -146,7 +151,7 @@ h1 {
 		However, if you used the mapping module then the mapped output file is already in
 		arf format.
 
-		<h1>Identification of known and novel miRNAs</h1> 
+		<h2>Identification of known and novel miRNAs</h2> 
 		For predicting novel miRNAs the miRDeep2 module from the package is called with a
 		collapsed reads file and a reference genome file in fasta format. For better
 		prediction results reference files of miRNAs and related miRNAs should be given since
@@ -157,7 +162,7 @@ h1 {
 			2>report.log</div> 		
 
 
-		<h1>Data preprocessing for miRNA expression profiling</h1>
+		<h2>Data preprocessing for miRNA expression profiling</h2>
 		In case you want to get expression values of miRNAs or other small RNAs (like tRNA
 		fragments for instance) in your data the mapping of the reads to genome is not necessary.
 		In case you have a collapsed reads file already with 
