@@ -38,14 +38,12 @@ h2 {
 		Apparently you will need a github account for that.
 		<h2>Preface</h2>
 		This is a step by step guide for a full small RNA sequencing data analysis using the
-		miRDeep2 package and its patched files. The first part will describe the general workflow
+		miRDeep2 package. The first part will describe the general workflow
 		to do de-novo miRNA predictions based on a small RNAseq data seq and the second part will
 		focus on expression analysis with the quantification module. 
 		<h2> Installation instructions</h2>
 		If you haven't installed them yet you can obtain the main package from 
 		<a href="https://github.com/rajewsky-lab/mirdeep2">miRDeep2</a>
-		and the patched files from 
-		<a href="https://github.com/Drmirdeep/mirdeep2_patch">patch</a>		
 		by clicking on 'Clone or download' and then on 'Download Zip'.
 
 		Extract the zipped files and then open a command line window.
@@ -53,8 +51,6 @@ h2 {
 		If you have git installed you can obtain the packages also directly from the command line
 		by typing 
 		<div class="command">git clone https://github.com/rajewsky-lab/mirdeep2.git</div> 
-		and
-		<div class="command">git clone https://github.com/Drmirdeep/mirdeep2_patch.git</div>
 		To install the miRDeep2 package enter the directory to which the package was extracted
 		to. If you extracted the folder on the Desktop then typing 
 		<div class="command">cd ~/Desktop/mirdeep2</div> 
@@ -67,16 +63,8 @@ h2 {
 
 		When mirdeep2 was installed successfully please open a new terminal window and just type
 		<div class="command">miRDeep2.pl</div>
-		If you see the miRDeep2 usage instructions on the screen you can continue to
-		install the patch. Otherwise something went wrong during the installation. 
-		In case everything worked fine you can now enter the directory of the
-		mirdeep2_patch by typing
-		<div class="command">cd ~/Desktop/mirdeep2_patch</div>
-		if you extracted the patched file to the Desktop. 
-		Typing 
-		<div class="command">bash patchme.sh</div>
-		will add the patched files to your mirdeep2 installation. 
-		After that we can start with some miRNA data analysis.
+		If you see the miRDeep2 usage instructions on the screen you can continue.
+        Otherwise something went wrong during the installation. 
 
 		Download the miRBase reference files for version 21 by typing
 		<div class="command">mirbase.pl 21</div>
